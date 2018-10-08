@@ -13,7 +13,7 @@
 
 #ifdef _LINUX_
 #define _mkdir(dir) mkdir(dir, 666)
-#define _sleep sleep
+#define _sleep(duration) usleep(duration * 1000)
 #endif
 
 #pragma warning(disable:4996)
