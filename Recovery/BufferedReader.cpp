@@ -1,8 +1,14 @@
 #include "BufferedReader.h"
 
 #include <algorithm>
+#include <cstring>
 
 #pragma warning(disable:4996)
+
+#ifdef _LINUX_
+#define _fseeki64 fseeko64
+#define _ftelli64 ftello64
+#endif
 
 BufferedReader::BufferedReader() {
 	m_file = nullptr;

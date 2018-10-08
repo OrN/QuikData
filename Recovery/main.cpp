@@ -3,8 +3,18 @@
 #include "CRC32.h"
 
 #include <algorithm>
+#ifdef _LINUX_
+#include <sys/stat.h>
+#include <unistd.h>
+#else
 #include <direct.h>
+#endif
 #include <iostream>
+
+#ifdef _LINUX_
+#define _mkdir(dir) mkdir(dir, 666)
+#define _sleep sleep
+#endif
 
 #pragma warning(disable:4996)
 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstring>
 #include <inttypes.h>
 
 extern void crc32init();
